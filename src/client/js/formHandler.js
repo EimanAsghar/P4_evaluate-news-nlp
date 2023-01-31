@@ -32,4 +32,3 @@ const handleSubmit = async() => {
 }
 
 export { handleSubmit }
-export { polarityChecker }
