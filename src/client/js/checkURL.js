@@ -1,6 +1,3 @@
-
-
-
 // ref: https://www.w3resource.com/javascript-exercises/javascript-regexp-exercise-9.php
 
 function checkURL(url) {
