@@ -28,7 +28,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
         new WorkboxPlugin.GenerateSW()
-    ],
+        ],
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
     }
