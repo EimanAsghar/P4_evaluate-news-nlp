@@ -1,34 +1,44 @@
-const post = async(url = '', data= {}) =>{
+
+const post = async (url, data) => {
     const response = await fetch(url, {
         method: 'POST',
-        credentials: 'same-origin',
         mode: 'cors',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
     })
-    try{
+    try {
+
         return await response.json()
-    } catch(error){
+
+    } catch (error) {
+
         console.log(error)
     }
 }
 
-const handleSubmit = async() => {
-    let url  = document.getElementById('url').value
-    if(Client.checkURL(url)){
-        post('http://localhost:8081/sendData', {url: url}).then(data =>{
-            document.getElementById('polarity').innerHTML =  `Polarity: ${data.score_tag}`;
-            document.getElementById("agreement").innerHTML = `Agreement: ${data.agreement}`;
-            document.getElementById("subjectivity").innerHTML = `Subjectivity: ${data.subjectivity}`;
-            document.getElementById("confidence").innerHTML = `Confidence: ${data.confidence}`;
-            document.getElementById("irony").innerHTML = `Irony: ${data.irony}`;
-        })
+function handleSubmit(event) {
 
-    } else{
+    event.preventDefault()
+
+    let url = document.getElementById('url').value
+    if (Client.checkURL(url)) {
+        post('http://localhost:8080/sendData', { url: url })
+
+        .then(data => {
+            console.log(data)
+             console.log("TEST")
+            document.getElementById('polarity').innerHTML = data.score_tag;
+            document.getElementById("confidence").innerHTML = data.confidence;
+            document.getElementById("irony").innerHTML = data.irony;
+            document.getElementById("subjectivity").innerHTML = data.subjectivity;
+        })
+        console.log("sent to html")
+    } else {
         alert('Enter another URL!')
     }
 }
 
 export { handleSubmit }
+
