@@ -1,7 +1,8 @@
 
-const post = async (url, data) => {
+const post = async (url="", data={}) => {
     const response = await fetch(url, {
         method: 'POST',
+        credentials: 'same-origin',
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
@@ -34,7 +35,7 @@ function handleSubmit(event) {
             document.getElementById("irony").innerHTML = data.irony;
             document.getElementById("subjectivity").innerHTML = data.subjectivity;
         })
-        console.log("sent to html")
+
     } else {
         alert('Enter another URL!')
     }
