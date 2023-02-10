@@ -24,7 +24,7 @@ function handleSubmit(event) {
     event.preventDefault()
 
     let url = document.getElementById('url').value
-    if (Client.checkURL(url)) {
+    if (Client.checkURL(url) == true) {
         post('http://localhost:8080/sendData', { url: url })
 
         .then(data => {
