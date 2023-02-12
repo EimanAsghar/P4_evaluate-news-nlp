@@ -18,8 +18,7 @@ Fork the project Github repo, and then clone or download the zip file locally. R
 - `npm install`
 
 The used API is MeaningCloud Sentiment Analysis:
-You can find the API https://www.meaningcloud.com/developer/sentiment-analysis O
-nce you create an account with MeaningCloud, you will be given a license key to start using the API. 
+You can find the API https://www.meaningcloud.com/developer/sentiment-analysis Once you create an account with MeaningCloud, you will be given a license key to start using the API. 
 
 Use npm to install the dotenv package 
 - `npm install dotenv`
