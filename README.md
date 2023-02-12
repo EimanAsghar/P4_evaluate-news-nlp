@@ -37,3 +37,6 @@ Rub the project:
 Then open:
 http://localhost:8081/
 
+For Testing Run:
+- `npm run test`
+
